@@ -1,0 +1,69 @@
+﻿@page "/relicstracker"
+@using Relictify
+
+<h1>Relics Tracker</h1>
+
+<h3>Welcome to Relictify!</h3>
+@if(characters.Count == 0)
+{
+    <div>To begin, add a character here:</div>
+    //refactor the input button to swap a showAddCharSubmenu bool, then render the component using an if directive @if (showAddCharSubmenu) {render component here}
+}
+<input type="button" value="Add Character" @onclick="AddChar" /> 
+@if (addChar)
+{
+    <form>
+        <input required type="text" placeholder="Character Name" @bind="NewCharName"/>
+        <input required type="text" placeholder="Character Element" @bind="NewCharElement" />
+        <input required type="text" placeholder="Character Path" @bind="NewCharPath" />
+        <button @onclick="FinishAddChar">Add</button>
+    </form>
+    //Todo: Change all of this to a button that when you click, opens up the 'add character' submenu the same way opening it in HSR would.
+    //Need to figure out how the child rendered CharacterSelector component can pass data to the parent (this page).
+}
+
+
+<ul>
+    @foreach(Character character in characters)
+    {
+        <li>
+            <p>@character.Name follows the Path of @character.Path and deals @character.Element damage.
+                <input type="button" value="Delete" @onclick="@(e => {deleteChar = character; DeleteChar();})" />
+            </p>
+            
+        </li>
+    }
+</ul>
+
+@code {
+    private List<Character> characters = new List<Character>();
+    private bool addChar = false;
+    private string? NewCharName;
+    private string? NewCharElement;
+    private string? NewCharPath;
+    private Character? deleteChar;
+
+    private void AddChar()
+    {
+        addChar = true;
+    }
+
+    private void FinishAddChar()
+    {
+        Character currChar = new Character(4, NewCharName, NewCharElement, NewCharPath);
+        characters.Add(currChar);
+        NewCharName = null;
+        NewCharElement = null;
+        NewCharPath = null;
+        addChar = false;
+    }
+
+    private void DeleteChar()
+    {
+        if(deleteChar != null)
+        {
+            characters.Remove(deleteChar);
+            deleteChar = null;
+        }   
+    }
+}

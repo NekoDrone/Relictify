@@ -1,0 +1,10 @@
+﻿.characterSelector {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+.characterBox {
+    width: 175px;
+    margin: auto;
+    text-align: center;
+}
