@@ -1,70 +1,66 @@
 ﻿namespace Relictify
 {
-    public class CharacterEntry
+    public class Relic
     {
-        public bool IsActive { get; set; }
-        public Character Character { get; set; }
-        public LightCone LightCone { get; set; }
-        public Relics Relics { get; set; }
-        public double HP { get; set; } //put the stats here because characters provide base stats only. Use the StatsCalc static class to calculate from base.
-        public double Atk { get; set; }
-        public double Def { get; set; }
-        public double Spd { get; set; }
-        public double CritRate { get; set; }
-        public double CritDmg { get; set; }
-        public double BreakEffect { get; set; }
-        public double OutgoingHealing { get; set; }
-        public double ERR { get; set; }
-        public double EHR { get; set; }
-        public double EffectRes { get; set; }
-        public double ElementalDamage { get; set; } //don't need to make lists because you just use the prepare function to insert it in. (i love method chaining)?? WHY?? you need to store the list for additional calcs...
+        public RelicType RelicType { get; set; }
+        public string RelicSet { get; set; }
+        public Stat MainStat { get; set; }
+        public Stat SubStat1 { get; set; }
+        public Stat SubStat2 { get; set; }
+        public Stat SubStat3 { get; set; }
+        public Stat SubStat4 { get; set; }
+        public int Level { get; set; }
+
+        public Relic(RelicType relicType, string relicSet, Stat mainStat)
+        {
+            this.RelicType = relicType;
+            this.RelicSet = relicSet;
+            this.MainStat = mainStat;
+            this.SubStat1 = new Stat(StatType.None);
+            this.SubStat2 = new Stat(StatType.None);
+            this.SubStat3 = new Stat(StatType.None);
+            this.SubStat4 = new Stat(StatType.None);
+            this.Level = 0;
+        }
+
+    }
+
+    public enum RelicType
+    {
+        Head,
+        Hands,
+        Body,
+        Feet,
+        Sphere,
+        Rope
+    }
+
+    public class Relics
+    {
+        public string CavernSet2pc { get; set; }
+        public string CavernSet4pc { get; set; }
+        public string PlanarSet { get; set; }
+        public Relic HeadRelic { get; set; }
+        public Relic HandsRelic { get; set; }
+        public Relic BodyRelic { get; set; }
+        public Relic FeetRelic { get; set; }
+        public Relic SphereRelic { get; set; }
+        public Relic RopeRelic { get; set; }
         public List<CalcModifier> CalcModifiers { get; set; }
 
-        public CharacterEntry(Character Character)
+        public Relics()
         {
-            this.IsActive = false;
-            this.Character = Character;
-            this.Relics = new Relics();
+            this.CavernSet2pc = "";
+            this.CavernSet4pc = "";
+            this.PlanarSet = "";
+            this.HeadRelic = new Relic(RelicType.Head, "Empty Relic", new Stat(StatType.HP));
+            this.HandsRelic = new Relic(RelicType.Hands, "Empty Relic", new Stat(StatType.Atk));
+            this.BodyRelic = new Relic(RelicType.Body, "Empty Relic", new Stat(StatType.None));
+            this.FeetRelic = new Relic(RelicType.Feet, "Empty Relic", new Stat(StatType.None));
+            this.SphereRelic = new Relic(RelicType.Sphere, "Empty Relic", new Stat(StatType.None));
+            this.RopeRelic = new Relic(RelicType.Rope, "Empty Relic", new Stat(StatType.None));
             this.CalcModifiers = new List<CalcModifier>();
-            this.LightCone = new LightCone("Blank LC");
-        }
-
-        private bool HasLightCone()
-        {
-            return this.LightCone != null;
-        }
-        public Relic[] LoadRelics()
-        {
-            Relics relics = this.Relics;
-            Relic[] allRelics = new Relic[6];
-            allRelics[0] = relics.HeadRelic;
-            allRelics[1] = relics.HandsRelic;
-            allRelics[2] = relics.BodyRelic;
-            allRelics[3] = relics.HandsRelic;
-            allRelics[4] = relics.SphereRelic;
-            allRelics[5] = relics.RopeRelic;
-            return allRelics;
-        }
-
-        public void LoadCalcModifiers()
-        {
-            foreach (CalcModifier modifier in this.Character.CalcModifiers) this.CalcModifiers.Add(modifier);
-            foreach (CalcModifier modifier in this.Relics.CalcModifiers) this.CalcModifiers.Add(modifier);
-            if (HasLightCone()) foreach (CalcModifier modifier in LightCone.CalcModifiers) this.CalcModifiers.Add(modifier);
-        }
-
-        public void CalculateAllStats()
-        {
-            Relic[] relics = LoadRelics();
-            this.HP = StatsCalc.CalculateBaseStat(relics, this.Character.BaseHP, this.LightCone.LightConeHP, StatType.HPPercent, StatType.HP);
-            this.Atk = StatsCalc.CalculateBaseStat(relics, this.Character.BaseAtk, this.LightCone.LightConeAtk, StatType.AtkPercent, StatType.Atk);
-            this.Def = StatsCalc.CalculateBaseStat(relics, this.Character.BaseDef, this.LightCone.LightConeDef, StatType.DefPercent, StatType.Def);
-            this.Spd = StatsCalc.CalculateBaseStat(relics, this.Character.BaseSpd, 0, StatType.SpdPercent, StatType.Spd);
-            this.CritRate = StatsCalc.CalculateAdditiveStats();
-            this.CritDmg = CalculateCritDmg(relics);
-            this.BreakEffect = CalculateBreakEffect(relics);
-            this.OutgoingHealing = CalculateOutgoingHealing(relics);
-            this.ERR = CalculateERR(relics);
         }
     }
+
 }
