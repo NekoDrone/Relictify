@@ -23,12 +23,12 @@
 
     public class Stat
     {
-        public StatType TypeOfStat { get; set; }
+        public StatType StatType { get; set; }
         public int TimesEnhanced { get; set; }
         public double Value { get; set; } //All % values are listed as whole numbers e.g. 100.00% in game = 100.00, 84.4% = 84.4.
-        public Stat(StatType TypeOfStat)
+        public Stat(StatType StatType)
         {
-            this.TypeOfStat = TypeOfStat;
+            this.StatType = StatType;
             this.Value = 0;
             this.TimesEnhanced = 1;
         }

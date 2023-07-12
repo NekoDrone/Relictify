@@ -27,11 +27,7 @@
             this.Relics = new Relics();
             this.CalcModifiers = new List<CalcModifier>();
             this.LightCone = new LightCone("Blank LC");
-        }
-
-        private bool HasLightCone()
-        {
-            return this.LightCone != null;
+            CalculateAllStats();
         }
         public Relic[] LoadRelics()
         {
@@ -49,22 +45,28 @@
         public void LoadCalcModifiers()
         {
             foreach (CalcModifier modifier in this.Character.CalcModifiers) this.CalcModifiers.Add(modifier);
+            foreach (CalcModifier modifier in this.LightCone.CalcModifiers) this.CalcModifiers.Add(modifier);
             foreach (CalcModifier modifier in this.Relics.CalcModifiers) this.CalcModifiers.Add(modifier);
-            if (HasLightCone()) foreach (CalcModifier modifier in LightCone.CalcModifiers) this.CalcModifiers.Add(modifier);
         }
 
         public void CalculateAllStats()
         {
             Relic[] relics = LoadRelics();
-            this.HP = CalculateBaseStat(relics, this.Character.BaseHP, this.LightCone.LightConeHP, StatType.HPPercent, StatType.HP);
-            this.Atk = CalculateBaseStat(relics, this.Character.BaseAtk, this.LightCone.LightConeAtk, StatType.AtkPercent, StatType.Atk);
-            this.Def = CalculateBaseStat(relics, this.Character.BaseDef, this.LightCone.LightConeDef, StatType.DefPercent, StatType.Def);
-            this.Spd = CalculateBaseStat(relics, this.Character.BaseSpd, 0, StatType.SpdPercent, StatType.Spd);
-            this.CritRate = StatsCalc.CalculateAdditiveStats();
-            this.CritDmg = CalculateCritDmg(relics);
-            this.BreakEffect = CalculateBreakEffect(relics);
-            this.OutgoingHealing = CalculateOutgoingHealing(relics);
-            this.ERR = CalculateERR(relics);
+            LoadCalcModifiers();
+
+            this.HP = StatsCalc.CalculateBaseStat(relics, this.Character.BaseHP, this.LightCone.LightConeHP, StatType.HPPercent, StatType.HP, this.CalcModifiers);
+            this.Atk = StatsCalc.CalculateBaseStat(relics, this.Character.BaseAtk, this.LightCone.LightConeAtk, StatType.AtkPercent, StatType.Atk, this.CalcModifiers);
+            this.Def = StatsCalc.CalculateBaseStat(relics, this.Character.BaseDef, this.LightCone.LightConeDef, StatType.DefPercent, StatType.Def, this.CalcModifiers);
+            this.Spd = StatsCalc.CalculateBaseStat(relics, this.Character.BaseSpd, 0, StatType.SpdPercent, StatType.Spd, this.CalcModifiers);
+
+            this.CritRate = StatsCalc.CalculateAdditiveStats(relics, 5.0, StatType.CritRate, this.CalcModifiers);
+            this.CritDmg = StatsCalc.CalculateAdditiveStats(relics, 50.0, StatType.CritDmg, this.CalcModifiers);
+            this.BreakEffect = StatsCalc.CalculateAdditiveStats(relics, 0, StatType.BreakEffect, this.CalcModifiers);
+            this.OutgoingHealing = StatsCalc.CalculateAdditiveStats(relics, 0, StatType.OutgoingHealing, this.CalcModifiers);
+            this.ERR = StatsCalc.CalculateAdditiveStats(relics, 0, StatType.ERR, this.CalcModifiers);
+            this.EHR = StatsCalc.CalculateAdditiveStats(relics, 0, StatType.EHR, this.CalcModifiers);
+            this.EffectRes = StatsCalc.CalculateAdditiveStats(relics, 0, StatType.EffectRes, this.CalcModifiers);
+            this.ElementalDamage = StatsCalc.CalculateAdditiveStats(relics, 0, StatType.ElementalDamage, this.CalcModifiers);
         }
     }
 }
