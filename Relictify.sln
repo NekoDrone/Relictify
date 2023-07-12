@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Relictify", "relictify-blazorwasm\Relictify.csproj", "{1A791245-1D2C-4791-9CB1-984F17D2C63F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Relictify", "Relictify\Relictify.csproj", "{1A791245-1D2C-4791-9CB1-984F17D2C63F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
