@@ -9,3 +9,4 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();
+//todo: NavMenu is not showing properly and CSS is b r o k e for some reason, pls fix.
