@@ -27,51 +27,44 @@ namespace Relictify
 
     public static class StatsCalc
     {
-        public static double CalculateAdditiveStats(Relic[] relics, double startingValue, StatType statType, List<CalcModifier> CalcModifiers)
-        {//use for CR, CDMG, Break Effect, Outgoing Healing, EHR, Effect RES, and elemental damage.
-            //startingValue == 5 for CR, 50 for CDMG, 0 for Break Effect, Outgoing Healing, EHR, Effect RES and Elemental Damage.
 
-            List<double> statList = PrepareStatsList(relics, statType, CalcModifiers);
-            double res = startingValue;
-            foreach (double stat in statList)
-            {
-                res += stat;
-            }
-            return res;
+        public static double CalculateAdditiveStats(CharacterEntry characterEntry, StatType additiveStat)
+        {
+            //reminder to add 5 for CR, 50 for CDMG
+
+            characterEntry.LoadCalcModifiers();
+            double statSum = characterEntry.Relics.GetStatSum(additiveStat);
+            foreach (CalcModifier modifier in characterEntry.CalcModifiers)
+                if (modifier.StatModified == additiveStat)
+                    statSum += modifier.Value;
+            return statSum;
+
         }
 
-        public static List<double> PrepareStatsList(Relic[] relics, StatType statType, List<CalcModifier> CalcModifiers)
+        public static double CalculateBaseStat(CharacterEntry characterEntry, BaseStat baseStat)
         {
-            List<double> statsList = new();
-            foreach (Relic relic in relics)
-            {
-                if(relic.MainStat.StatType == statType) statsList.Add(relic.MainStat.Value);
-                if (relic.SubStat1.StatType == statType) statsList.Add(relic.SubStat1.Value);
-                if (relic.SubStat2.StatType == statType) statsList.Add(relic.SubStat2.Value);
-                if (relic.SubStat3.StatType == statType) statsList.Add(relic.SubStat3.Value);
-                if (relic.SubStat4.StatType == statType) statsList.Add(relic.SubStat4.Value);
-            }
-            foreach (CalcModifier modifier in CalcModifiers) if (modifier.StatModified == statType) statsList.Add(modifier.Value);
-            return statsList;
-        }
+            StatType percent = StatType.None;
+            StatType flat = StatType.None;
 
-        public static double CalculateBaseStat(Relic[] relics, double charStat, double lightConeStat, StatType percentStat, StatType flatStat, List<CalcModifier> CalcModifiers)
-        {
-            List<double> percentList = PrepareStatsList(relics, percentStat, CalcModifiers);
-            List<double> flatList = PrepareStatsList(relics, flatStat, CalcModifiers);
+            if (baseStat == BaseStat.Hp) { percent = StatType.HpPercent; flat = StatType.HpFlat; }
+            else if (baseStat == BaseStat.Atk) { percent = StatType.AtkPercent; flat = StatType.AtkFlat; }
+            else if (baseStat == BaseStat.Def) { percent = StatType.DefPercent; flat = StatType.DefFlat; }
+            else if (baseStat == BaseStat.Spd) { percent = StatType.SpdPercent; flat = StatType.SpdFlat; }
+            else return 0; //case switch bad >:(
 
-            double baseStat = charStat + lightConeStat;
-            double percent = 0;
-            foreach (double percentBonus in percentList)
+            double percentSum = characterEntry.Relics.GetStatSum(percent);
+            double flatSum = characterEntry.Relics.GetStatSum(flat);
+
+            characterEntry.LoadCalcModifiers();
+            foreach (CalcModifier modifier in characterEntry.CalcModifiers)
             {
-                percent += percentBonus;
+                if (modifier.StatModified == percent) percentSum += modifier.Value;
+                else if (modifier.StatModified == flat) flatSum += modifier.Value;
             }
-            double flat = 0;
-            foreach (double flatBonus in flatList)
-            {
-                flat += flatBonus;
-            }
-            return (baseStat * (1 + percent / 100)) + flat;
+
+            double baseStatValue = characterEntry.Character.GetBaseStat(flat) + characterEntry.LightCone.GetBaseStat(flat);
+
+            return (baseStatValue * (1 + percentSum / 100)) + flatSum;
         }
     }
 }

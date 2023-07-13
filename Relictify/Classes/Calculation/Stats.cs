@@ -2,13 +2,13 @@
 {
     public enum StatType
     {
-        HP,
-        HPPercent,
-        Atk,
+        HpFlat,
+        HpPercent,
+        AtkFlat,
         AtkPercent,
-        Def,
+        DefFlat,
         DefPercent,
-        Spd,
+        SpdFlat,
         SpdPercent,
         CritRate,
         CritDmg,
@@ -21,16 +21,29 @@
         None
     }
 
+    public enum BaseStat
+    {
+        Hp,
+        Atk,
+        Def,
+        Spd
+    }
+
     public class Stat
     {
         public StatType StatType { get; set; }
-        public int TimesEnhanced { get; set; }
-        public double Value { get; set; } //All % values are listed as whole numbers e.g. 100.00% in game = 100.00, 84.4% = 84.4.
-        public Stat(StatType StatType)
+        public int TimesEnhanced { get; private set; }
+        public double Value { get; private set; } //All % values are listed as whole numbers e.g. 100.00% in game = 100.00, 84.4% = 84.4.
+        public Stat(StatType StatType = StatType.None, double Value = 0, int TimesEnhanced = 0)
         {
             this.StatType = StatType;
-            this.Value = 0;
-            this.TimesEnhanced = 1;
+            this.Value = Value;
+            this.TimesEnhanced = TimesEnhanced;
+        }
+
+        public void ReloadStat()
+        {
+            //need to implement the level mapping eventually...
         }
     }
 }
