@@ -50,7 +50,7 @@ namespace Relictify
             else if (baseStat == BaseStat.Atk) { percent = StatType.AtkPercent; flat = StatType.AtkFlat; }
             else if (baseStat == BaseStat.Def) { percent = StatType.DefPercent; flat = StatType.DefFlat; }
             else if (baseStat == BaseStat.Spd) { percent = StatType.SpdPercent; flat = StatType.SpdFlat; }
-            else return 0; //case switch bad >:(
+            else return 0; //case switch bad >:( | i just prefer using if-elses unless its super performance heavy
 
             double percentSum = characterEntry.Relics.GetStatSum(percent);
             double flatSum = characterEntry.Relics.GetStatSum(flat);

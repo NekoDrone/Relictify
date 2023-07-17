@@ -5,7 +5,7 @@
         public bool IsActive { get; private set; }
         public Character Character { get; private set; }
         public LightCone LightCone { get; private set; }
-        public Relics Relics { get; private set; }
+        public RelicsCollection Relics { get; private set; }
         public double HP { get; private set; }
         public double Atk { get; private set; }
         public double Def { get; private set; }
@@ -24,7 +24,7 @@
         {
             this.IsActive = false;
             this.Character = Character;
-            this.Relics = new Relics();
+            this.Relics = new RelicsCollection();
             this.CalcModifiers = new List<CalcModifier>();
             this.LightCone = new LightCone("Blank LC");
             CalculateAllStats();

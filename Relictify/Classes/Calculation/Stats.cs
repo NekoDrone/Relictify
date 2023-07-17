@@ -27,7 +27,7 @@
         Atk,
         Def,
         Spd
-    }
+    }//separate enums!!
 
     public class Stat
     {
@@ -40,10 +40,21 @@
             this.Value = Value;
             this.TimesEnhanced = TimesEnhanced;
         }
+    }
 
-        public void ReloadStat()
+    public class MainStat : Stat
+    {
+        public void ReloadMainStat()
         {
-            //need to implement the level mapping eventually...
+            //implement main stat mapping here
+        }
+    }
+
+    public class SubStat : Stat
+    {
+        public void ReloadSubStat()
+        {
+            //implement substat reloading here
         }
     }
 }

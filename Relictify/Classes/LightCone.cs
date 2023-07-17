@@ -26,7 +26,7 @@
             if (statType == StatType.HpFlat) return this.LightConeHp.Value;
             else if (statType == StatType.AtkFlat) return this.LightConeAtk.Value;
             else if (statType == StatType.DefFlat) return this.LightConeDef.Value;
-            else return 0;
+            else throw new ArgumentException("Invalid Stat Type provided.", "StatType: " + statType.ToString() + " is invalid. Stat Type must be HpFlat, AtkFlat, or DefFlat.");
         }
     }
 
