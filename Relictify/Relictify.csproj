@@ -16,7 +16,8 @@
   <ItemGroup>
     <None Remove="Enums\" />
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="Enums\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace Relictify
 {
-    public class RelicsCollection
+    public class RelicsContainer
     {
         public RelicSet CavernSet2pc1 { get; private set; }
         public RelicSet CavernSet2pc2 { get; private set; }
@@ -12,23 +12,22 @@
         public Relic FeetRelic { get; private set; }
         public Relic SphereRelic { get; private set; }
         public Relic RopeRelic { get; private set; }
-        public List<CalcModifier> CalcModifiers { get; private set; }
+        public List<MiscStat> MiscStats { get; private set; }
 
-        public RelicsCollection()
+        public RelicsContainer()
         {
             this.CavernSet2pc1 = RelicSet.None;
             this.CavernSet2pc2 = RelicSet.None;
             this.CavernSet4pc = RelicSet.None;
             this.PlanarSet = RelicSet.None;
 
-            RelicBuilder builder = new RelicBuilder();
-            this.HeadRelic = builder.ToRelic();
-            this.HandsRelic = builder.ToRelic();
-            this.BodyRelic = builder.ToRelic();
-            this.FeetRelic = builder.ToRelic();
-            this.SphereRelic = builder.ToRelic();
-            this.RopeRelic = builder.ToRelic();
-            this.CalcModifiers = new List<CalcModifier>();
+            this.HeadRelic = RelicBuilderDirector.BuildHeadRelic();
+            this.HandsRelic = RelicBuilderDirector.BuildHandsRelic();
+            this.BodyRelic = RelicBuilderDirector.BuildBodyRelic(StatType.None);
+            this.FeetRelic = RelicBuilderDirector.BuildFeetRelic(StatType.None);
+            this.SphereRelic = RelicBuilderDirector.BuildSphereRelic(StatType.None);
+            this.RopeRelic = RelicBuilderDirector.BuildRopeRelic(StatType.None);
+            this.MiscStats = new List<MiscStat>();
         }
 
         public double GetStatSum(StatType statType)
@@ -41,12 +40,6 @@
             statSum += SphereRelic.GetStat(statType);
             statSum += RopeRelic.GetStat(statType);
             return statSum;
-        }
-
-        public void GetCalcModifiers()
-        {
-            RelicSet[] bonuses = new RelicSet[3];
-            if
         }
     }
 

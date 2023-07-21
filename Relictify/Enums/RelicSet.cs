@@ -25,7 +25,12 @@ namespace Relictify
 		PlanarPanGalacticCommercialEnterprise,
 		PlanarSpaceSealingStation,
 		PlanarSprightlyVonwacq,
-		PlanarTaliaKingdomOfBanditry
+		PlanarTaliaKingdomOfBanditry,
+
+		CavernLongevousDisciple,
+		CavernMessengerTraversingHackerspace,
+		PlanarRutilantArena,
+		PlanarBrokenKeel
 	}
 }
 

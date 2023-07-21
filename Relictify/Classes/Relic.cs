@@ -48,6 +48,8 @@
 
         public void SetSubStat(int index, StatType statType)
         {
+            if (statType == this.MainStat.StatType) throw new InvalidOperationException("A relic's substat type cannot be a duplicate of it's mainstat type.");
+
             if (statType == this.SubStat1.StatType
                 || statType == this.SubStat2.StatType
                 || statType == this.SubStat3.StatType
@@ -58,17 +60,24 @@
             else if (index == 2) this.SubStat2.StatType = statType;
             else if (index == 3) this.SubStat3.StatType = statType;
             else if (index == 4) this.SubStat4.StatType = statType;
-            ReloadStats();
         }
 
         public void SetMainStat(StatType statType)
         {
             if (statType == this.MainStat.StatType) return;
+            if (statType == SubStat1.StatType
+                || statType == SubStat2.StatType
+                || statType == SubStat3.StatType
+                || statType == SubStat4.StatType) throw new InvalidOperationException("A relic's main stat type cannot be a duplicate of it's substat types.");
             this.MainStat.StatType = statType;
-            ReloadStats();
         }
 
-        private void ReloadStats()
+        public void SetRelicType(RelicType relicType)
+        {
+            this.RelicType = relicType;
+        }
+
+        public void ReloadStats()
         {
             MainStat.ReloadMainStat();
             SubStat1.ReloadSubStat();
@@ -76,17 +85,6 @@
             SubStat3.ReloadSubStat();
             SubStat4.ReloadSubStat();
         }
-    }
-
-    public enum RelicType
-    {
-        Head,
-        Hands,
-        Body,
-        Feet,
-        Sphere,
-        Rope,
-        Blank
     }
 }
 
