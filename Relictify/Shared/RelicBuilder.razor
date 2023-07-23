@@ -1,5 +1,89 @@
-﻿<h3>RelicBuilder</h3>
+﻿@page "/relicbuilder"
+@using MyComponents
+@using Relictify
+
+<h1>New Relic</h1>
+
+<p>Add a new relic:</p>
+
+<input type="button" value="Add Relic" @onclick="AddRelic"/>
+
+@if(addRelic)
+{
+    <form>
+        <div>
+            <label for="relictype">Relic Type:</label>
+            <select name="relictype" @bind="relicType">
+                @foreach(var relicType in Enum.GetValues(typeof(RelicType)))
+                {
+                    <option value="@relicType">@relicType</option>
+                    //TODO: Separate each of these components out into
+                    //a generic field component.
+                }
+            </select>
+        </div>
+        <div>
+            <label for="relictype">Relic Set:</label>
+            <select name="relictype" @bind="relicSet">
+                @foreach(var relicSet in Enum.GetValues(typeof(RelicSet)))
+                {
+                    <option value="@relicSet">@relicSet</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label for="relictype">Main Stat</label>
+            <select name="relictype" @bind="relicSet">
+                @foreach(var relicSet in Enum.GetValues(typeof(RelicSet)))
+                {
+                    <option value="@relicSet">@relicSet</option>
+                }
+            </select>
+        </div>
+        <RelicBuilderFormField
+            LabelID="substat1"
+            LabelText="Substat 1"
+            EnumType=@typeof(StatType)
+            @bind="subStat1"/>
+    </form>
+}
+
+<ul>
+    @foreach(Relic relic in relics)
+    {
+        <li>
+            <p>
+
+            </p>
+        </li>
+    }
+</ul>
 
 @code {
+    private List<Relic> relics = new List<Relic>();
+    private bool addRelic = false;
+    private RelicType relicType;
+    private RelicSet relicSet;
+    private StatType mainStat;
+    private StatType subStat1;
+    private StatType subStat2;
+    private StatType subStat3;
+    private StatType subStat4;
 
+    private void AddRelic() => addRelic = true;
+
+    private void Finish()
+    {
+        //TODO: implement
+    }
+
+    private void SaveRelicToStorage()
+    {
+        //TODO: implement
+    }
+
+    private void RefreshRelicsList()
+    {
+        //TODO: implement
+    }
 }

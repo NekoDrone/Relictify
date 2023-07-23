@@ -41,6 +41,16 @@
             statSum += RopeRelic.GetStat(statType);
             return statSum;
         }
+
+        public void EquipRelic(Relic relic)
+        {
+            if (relic.RelicType == RelicType.Head) HeadRelic = relic;
+            if (relic.RelicType == RelicType.Hands) HandsRelic = relic;
+            if (relic.RelicType == RelicType.Feet) FeetRelic = relic;
+            if (relic.RelicType == RelicType.Body) BodyRelic = relic;
+            if (relic.RelicType == RelicType.Rope) RopeRelic = relic;
+            if (relic.RelicType == RelicType.Sphere) SphereRelic = relic;
+        }
     }
 
 }
