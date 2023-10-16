@@ -1,0 +1,13 @@
+<div>
+    <img src="@Icon" alt="@AltText"/>
+</div>
+
+@code {
+
+    [Parameter]
+    public string Icon { get; set; } = "none";
+
+    [Parameter]
+    public string AltText { get; set; } = "This is an empty image.";
+
+}

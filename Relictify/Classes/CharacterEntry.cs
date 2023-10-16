@@ -1,4 +1,6 @@
-﻿namespace Relictify
+﻿using Relictify.Classes.Static;
+
+namespace Relictify.Classes
 {
     public class CharacterEntry
     {
@@ -9,10 +11,10 @@
         public CharStats CharStats { get; private set; }
         public List<MiscStat> MiscStats { get; private set; }
 
-        public CharacterEntry(Character Character)
+        public CharacterEntry(Character character)
         {
             this.IsActive = false;
-            this.Character = Character;
+            this.Character = character;
             this.LightCone = new LightCone("Blank LC");
             this.Relics = new RelicsContainer();
             this.CharStats = new CharStats();

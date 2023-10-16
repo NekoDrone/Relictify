@@ -1,0 +1,12 @@
+@page "/relictify-test"
+@using Relictify.Shared.Components.PageSummary
+@using Relictify.Classes
+
+<div>
+    <PageSummary PageEntry="@_testEntry"/>
+</div>
+
+@code {
+    private static readonly Character TestChar = new Character(5, "Pela", Element.Ice, Path.Nihility);
+    private readonly CharacterEntry _testEntry = new CharacterEntry(TestChar);
+}

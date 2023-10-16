@@ -1,0 +1,12 @@
+@using Relictify.Classes
+<div>
+    @foreach(CharacterEntry Char in Chars)
+    {
+        <CharSelectorButton/>
+    }
+</div>
+
+@code {
+    private int TotalChars;
+    private CharacterEntry[] Chars;
+}

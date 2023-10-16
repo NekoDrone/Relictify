@@ -1,0 +1,7 @@
+.page-summary {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: fit-content;
+    padding: 20px;
+}

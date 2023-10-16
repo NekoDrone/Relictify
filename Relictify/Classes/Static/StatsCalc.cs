@@ -23,10 +23,9 @@ can I auto-calculate the base stat from the given number instead?
 */
 
 //TODO: Think about user flow and interaction.
-namespace Relictify
-{
-    using System.Collections.Generic;
 
+namespace Relictify.Classes.Static
+{
     public static class StatsCalc
     {
 

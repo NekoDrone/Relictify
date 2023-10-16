@@ -1,0 +1,15 @@
+<div>
+    <p>@PageTitle</p>
+    <p>@CharPath / @CharName</p>
+</div>
+
+@code {
+    [Parameter]
+    public string PageTitle { get; set; } = "";
+    
+    [Parameter]
+    public string CharPath { get; set; } = "";
+    
+    [Parameter]
+    public string CharName { get; set; } = "";
+}
