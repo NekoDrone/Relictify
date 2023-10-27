@@ -1,6 +1,8 @@
-<div>
-    <p>@PageTitle</p>
-    <p>@CharPath / @CharName</p>
+@using Relictify.Enums
+
+<div class="summary-text">
+    <p class="page-title">@PageTitle</p>
+    <SummaryDetails CharName="@CharName" CharPath="@CharPath"/>
 </div>
 
 @code {
@@ -8,7 +10,7 @@
     public string PageTitle { get; set; } = "";
     
     [Parameter]
-    public string CharPath { get; set; } = "";
+    public required CharPath CharPath { get; set; }
     
     [Parameter]
     public string CharName { get; set; } = "";

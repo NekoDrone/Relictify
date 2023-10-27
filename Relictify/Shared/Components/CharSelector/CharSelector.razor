@@ -1,9 +1,11 @@
 @using Relictify.Classes
+@using Relictify.Shared.Components.AddChar
 <div>
     @foreach(CharacterEntry Char in Chars)
     {
         <CharSelectorButton/>
     }
+    <AddCharButton/>
 </div>
 
 @code {

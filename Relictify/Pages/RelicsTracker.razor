@@ -1,5 +1,5 @@
 ﻿@page "/relics-tracker"
-@using Relictify
+@using Relictify.Classes
 
 <h1>Relics Tracker</h1>
 
@@ -27,7 +27,7 @@
     @foreach(Character character in characters)
     {
         <li>
-            <p>@character.Name follows the Path of @character.Path and deals @character.Element damage.
+            <p>@character.Name follows the Path of @character.CharPath and deals @character.Element damage.
                 <input type="button" value="Delete" @onclick="@(e => {deleteChar = character; DeleteChar();})" />
             </p>
             

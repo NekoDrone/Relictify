@@ -1,6 +1,12 @@
 .summary-text{
     display: flex;
+    flex-direction: column;
 }
 
-.summary-text p {
+.page-title {
+    font-size: 14px;
+    font-family: "DIN", sans-serif;
+    font-weight: lighter;
+    color: #E3C995;
+    margin: 0
 }

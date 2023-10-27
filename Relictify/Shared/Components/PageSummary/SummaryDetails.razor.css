@@ -1,0 +1,19 @@
+.summary-details {
+    display: flex;
+    gap: 3px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.details-text {
+    font-family: "DIN", sans-serif;
+    color: whitesmoke;
+    font-weight: 500;
+    font-stretch: semi-expanded;
+    margin: 0;
+}
+
+.details-img {
+    height: 15px;
+    width: 15px;
+}

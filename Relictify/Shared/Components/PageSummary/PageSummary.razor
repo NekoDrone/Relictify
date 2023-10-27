@@ -1,11 +1,11 @@
 @using Relictify.Classes
 <div class="page-summary">
-    <PageSummaryContainer />
+    <PageSummaryContainer CharName="@PageEntry.Character.Name" CharPath="@PageEntry.Character.CharPath"/>
 </div>
 
 @code {
 
     [Parameter]
-    public CharacterEntry PageEntry { get; set; }
+    public required CharacterEntry PageEntry { get; set; }
 
 }

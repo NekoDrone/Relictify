@@ -1,0 +1,16 @@
+@using Relictify.Enums
+
+<div class="summary-details">
+    <img class="details-img" src="assets/images/char-paths/@(CharPath.ToString()).webp" alt="@CharPath.ToString()"/>
+    <p class="details-text">@CharPath.ToString() / @CharName</p>
+</div>
+
+@code {
+
+    [Parameter]
+    public required CharPath CharPath { get; set; }
+
+    [Parameter]
+    public string CharName { get; set; } = "";
+
+}

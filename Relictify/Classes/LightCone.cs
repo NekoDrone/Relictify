@@ -1,9 +1,10 @@
-﻿namespace Relictify
+﻿namespace Relictify.Classes
 {
+    using Relictify.Enums;
     public class LightCone
     {
         public string Name { get; private set; }
-        public Path Path { get; private set; }
+        public CharPath CharPath { get; private set; }
         public int Level { get; private set; }
         public int Ascension { get; private set; }
         public int Rarity { get; private set; }
@@ -15,7 +16,7 @@
         public LightCone(string name)
         {
             this.Name = name;
-            this.Path = Path.None;
+            this.CharPath = CharPath.None;
             this.Level = 1;
             this.Ascension = 0;
             this.MiscStats = new List<MiscStat>();

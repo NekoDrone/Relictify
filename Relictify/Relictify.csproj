@@ -19,5 +19,8 @@
 
   <ItemGroup>
     <Folder Include="Tests\" />
+    <Folder Include="wwwroot\assets\images\char-paths\" />
+    <Folder Include="wwwroot\assets\images\splash\" />
+    <Folder Include="wwwroot\css\fonts\font\" />
   </ItemGroup>
 </Project>

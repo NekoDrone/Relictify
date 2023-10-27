@@ -1,5 +1,19 @@
-<h3>CharSelectorButton</h3>
+@using Relictify.Classes
+@using Relictify.Classes.Static
+@using Relictify.Interfaces
+
+@inject IStateService AppState
+
+<div class="char-button" @onclick="@ChangeSelectedChar">
+    <img class="char-image" src="(@Character.Name)-splash.webp" alt="@Character.Name"/>
+</div>
 
 @code {
-    
+    [Parameter]
+    public required Character Character { get; set; }
+
+    private void ChangeSelectedChar()
+    {
+        AppState.ChangeChar(this.Character);
+    }
 }

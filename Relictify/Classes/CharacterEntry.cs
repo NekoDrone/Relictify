@@ -61,5 +61,12 @@ namespace Relictify.Classes
         {
             return LightCone.GetBaseStat(statType);
         }
+
+        public static CharacterEntry LoadCharacterEntry(Character character)
+        {
+            //TODO: Add loading mechanism.
+            //Actually, might be better to separate it into it's own class, then inject the dependency here.
+            throw new NotImplementedException();
+        }
     }
 }

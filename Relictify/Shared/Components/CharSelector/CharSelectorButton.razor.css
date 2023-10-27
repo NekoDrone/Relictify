@@ -1,0 +1,8 @@
+.char-button {
+    cursor: pointer;
+    
+}
+
+.char-image {
+    clip-path: circle(45%);
+}

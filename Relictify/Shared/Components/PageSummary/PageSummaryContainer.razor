@@ -1,9 +1,16 @@
+@using Relictify.Enums
+
 <div class="summary-container">
-    <PageIcon Icon=""/>
-    <SummaryText/>
+    <PageIcon/>
+    <SummaryText PageTitle="Character Details" CharName="@CharName" CharPath="@CharPath"/>
 </div>
 
 
 @code {
+    [Parameter]
+    public required CharPath CharPath { get; set; }
+    
+    [Parameter]
+    public required string CharName { get; set; }
     
 }
