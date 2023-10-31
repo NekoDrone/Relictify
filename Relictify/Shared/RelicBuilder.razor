@@ -1,4 +1,6 @@
 ﻿@page "/relicbuilder"
+@using Relictify.Backend.Stats
+@using Relictify.Backend.Relics
 
 <h1>New Relic</h1>
 
@@ -6,13 +8,13 @@
 
 <input type="button" value="Add Relic" @onclick="AddRelic"/>
 
-@if(addRelic)
+@if (addRelic)
 {
     <form>
         <div>
             <label for="relictype">Relic Type:</label>
             <select name="relictype" @bind="relicType">
-                @foreach(var relicType in Enum.GetValues(typeof(RelicType)))
+                @foreach (object? relicType in Enum.GetValues(typeof(RelicType)))
                 {
                     <option value="@relicType">@relicType</option>
                     //TODO: Separate each of these components out into
@@ -23,7 +25,7 @@
         <div>
             <label for="relictype">Relic Set:</label>
             <select name="relictype" @bind="relicSet">
-                @foreach(var relicSet in Enum.GetValues(typeof(RelicSet)))
+                @foreach (object? relicSet in Enum.GetValues(typeof(RelicSet)))
                 {
                     <option value="@relicSet">@relicSet</option>
                 }
@@ -32,7 +34,7 @@
         <div>
             <label for="relictype">Main Stat</label>
             <select name="relictype" @bind="relicSet">
-                @foreach(var relicSet in Enum.GetValues(typeof(RelicSet)))
+                @foreach (object? relicSet in Enum.GetValues(typeof(RelicSet)))
                 {
                     <option value="@relicSet">@relicSet</option>
                 }
@@ -42,12 +44,12 @@
             LabelID="substat1"
             LabelText="Substat 1"
             EnumType=@typeof(StatType)
-            @bind="subStat1"/>
+                         @bind="subStat1"/>
     </form>
 }
 
 <ul>
-    @foreach(Relic relic in relics)
+    @foreach (Relic relic in relics)
     {
         <li>
             <p>
@@ -58,8 +60,8 @@
 </ul>
 
 @code {
-    private List<Relic> relics = new List<Relic>();
-    private bool addRelic = false;
+    private readonly List<Relic> relics = new();
+    private bool addRelic;
     private RelicType relicType;
     private RelicSet relicSet;
     private StatType mainStat;
@@ -68,20 +70,24 @@
     private StatType subStat3;
     private StatType subStat4;
 
-    private void AddRelic() => addRelic = true;
+    private void AddRelic()
+    {
+        addRelic = true;
+    }
 
     private void Finish()
     {
-        //TODO: implement
+    //TODO: implement
     }
 
     private void SaveRelicToStorage()
     {
-        //TODO: implement
+    //TODO: implement
     }
 
     private void RefreshRelicsList()
     {
-        //TODO: implement
+    //TODO: implement
     }
+
 }

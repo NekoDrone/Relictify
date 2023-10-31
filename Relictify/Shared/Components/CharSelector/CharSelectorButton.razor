@@ -1,19 +1,23 @@
-@using Relictify.Classes
-@using Relictify.Classes.Static
-@using Relictify.Interfaces
-
+@using Relictify.Backend.WebStorage
+@using Relictify.StateManagement
+@using Relictify.Backend.Characters
 @inject IStateService AppState
+@inject IEntryStore EntryStore
 
 <div class="char-button" @onclick="@ChangeSelectedChar">
     <img class="char-image" src="(@Character.Name)-splash.webp" alt="@Character.Name"/>
 </div>
 
 @code {
+
     [Parameter]
     public required Character Character { get; set; }
 
     private void ChangeSelectedChar()
     {
-        AppState.ChangeChar(this.Character);
+        string entryIdentifier = "Entry: " + Character.Name;
+        CharacterEntry newEntry = EntryStore.GetEntry(entryIdentifier);
+        AppState.ChangeEntry(newEntry);
     }
+
 }

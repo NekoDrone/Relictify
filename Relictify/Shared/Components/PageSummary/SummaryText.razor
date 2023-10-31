@@ -1,17 +1,18 @@
-@using Relictify.Enums
-
+@using Relictify.Backend.Characters
 <div class="summary-text">
     <p class="page-title">@PageTitle</p>
     <SummaryDetails CharName="@CharName" CharPath="@CharPath"/>
 </div>
 
 @code {
+
     [Parameter]
     public string PageTitle { get; set; } = "";
-    
+
     [Parameter]
     public required CharPath CharPath { get; set; }
-    
+
     [Parameter]
     public string CharName { get; set; } = "";
+
 }

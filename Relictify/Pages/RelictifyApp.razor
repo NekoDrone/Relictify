@@ -1,9 +1,8 @@
 @page "/relictify-app"
+@using Relictify.StateManagement
 @using Relictify.Shared.Components.PageSummary
 @using Relictify.Shared.Components.CharSelector
-@using Relictify.Classes
-@using Relictify.Enums
-@using Relictify.Interfaces
+@using Relictify.Backend.Characters
 
 @inject IStateService AppState
 
@@ -17,22 +16,23 @@
 
 
 @code {
-    private static readonly Character TestChar = new Character(5, "Pela", Element.Ice, CharPath.Nihility);
-    private readonly CharacterEntry _testEntry = new CharacterEntry(TestChar);
-    private Character _currentChar = new Character(0, "Blank", Element.Imaginary, CharPath.None);
-    private CharacterEntry? _currentEntry;
-    private Page _activePage = Page.None;
-    private void HandleStateChange()
-    {
-        this._currentChar = AppState.GetCurrentChar();
-        this._activePage = AppState.GetCurrentPage();
-        this._currentEntry = CharacterEntry.LoadCharacterEntry(this._currentChar);
-        StateHasChanged();
-        //Might need to add a StateHasChanged() call.
-    }
-
+    private static readonly Character TestChar = new(5, "Pela", CombatElement.Ice, CharPath.Nihility);
+    private readonly CharacterEntry _testEntry = new(TestChar);
+    private PageInfo _pageInfo;
+    
     protected override void OnInitialized()
     {
         AppState.OnAppStateChange += HandleStateChange;
     }
+    
+    private void HandleStateChange()
+    {
+        _pageInfo.Entry = AppState.GetCurrentEntry();
+        _pageInfo.Page = AppState.GetCurrentPage();
+        StateHasChanged();
+        // Unsure if need to use the StateHasChanged() call.
+    }
+
+    
+
 }
