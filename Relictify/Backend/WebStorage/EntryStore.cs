@@ -17,6 +17,7 @@ public class EntryStore : IEntryStore
     {
         string jsonString = JsonSerializer.Serialize(entry);
         string identifier = EntryStartingIdentifier + entry.Character.Name;
+        Console.WriteLine($"Attempting to save entry {identifier}: {jsonString}");
         this._webStore.SetItem(identifier, jsonString);
     }
 

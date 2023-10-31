@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json.Serialization;
 using Relictify.Backend.Stats;
 
 namespace Relictify.Backend.Relics;
@@ -19,7 +20,7 @@ public class Relic
         this.Level = 0;
         this.Identifier = this.ConstructIdentifier();
     }
-
+    // TODO: Write ctor for json deserialization when pulling from storage.
     public Relic(RelicType relicType, MainStat mainStat)
     {
         this.RelicType = relicType;

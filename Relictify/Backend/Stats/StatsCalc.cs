@@ -22,8 +22,8 @@ e.g. my seele's attack = 3245 = 1169 + 2075
 can I auto-calculate the base stat from the given number instead?
 */
 
-//TODO: Think about user flow and interaction.
-
+// TODO: Think about user flow and interaction.
+// TODO 31/10/23: I hate the way that this works. Redo this whole thing, but it's useful for reference.
 using Relictify.Backend.Characters;
 
 namespace Relictify.Backend.Stats;

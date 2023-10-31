@@ -19,6 +19,7 @@ public class StateService : IStateService
         this._currentPage = Page.Details;
         this.InitializeStateService();
         this._currentEntry = this._entryStore.GetEntry("Entry: Trailblazer - Destruction");
+        // TODO: Replace with better empty entry. 
     }
 
     private void InitializeStateService()
