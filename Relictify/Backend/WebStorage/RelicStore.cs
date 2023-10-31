@@ -35,12 +35,16 @@ public class RelicStore : IRelicStore
         foreach (string key in storageRef.Keys)
         {
             if (!key.StartsWith(RelicStartingIdentifier)) continue;
+            
             string jsonString = storageRef[key];
             Relic? listItem = JsonSerializer.Deserialize<Relic>(jsonString);
             if (listItem == null)
                 throw new InvalidOperationException("Relic json conversion failed while loading all relics");
+            
             relicList.Add(listItem);
         }
+        // You might be tempted to convert the above to a LINQ expression,
+        // but the LINQ expression is extremely complex due to the deserializer.
 
         return relicList;
     }
