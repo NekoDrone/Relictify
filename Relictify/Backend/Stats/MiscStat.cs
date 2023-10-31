@@ -1,7 +1,6 @@
-﻿namespace Relictify.Backend.Stats
+﻿namespace Relictify.Backend.Stats;
+
+public class MiscStat : Stat
 {
-    public class MiscStat : Stat
-    {
-        //TODO: How the heck am i supposed to implement this...
-    }
+    //TODO: How the heck am i supposed to implement this...
 }

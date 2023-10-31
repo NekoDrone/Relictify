@@ -1,14 +1,13 @@
-﻿namespace Relictify.Backend.Characters
+﻿namespace Relictify.Backend.Characters;
+
+public enum CombatElement
 {
-    public enum CombatElement
-    {
-        None,
-        Physical,
-        Ice,
-        Wind,
-        Fire,
-        Lightning,
-        Imaginary,
-        Quantum
-    }
+    None,
+    Physical,
+    Ice,
+    Wind,
+    Fire,
+    Lightning,
+    Imaginary,
+    Quantum
 }

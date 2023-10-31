@@ -6,14 +6,6 @@ namespace Relictify.Backend.Relics;
 public class Relic
 {
     public readonly string Identifier;
-    public RelicType RelicType { get; set; }
-    public RelicSet RelicSet { get; set; }
-    public MainStat MainStat { get; }
-    public SubStat SubStat1 { get; }
-    public SubStat SubStat2 { get; }
-    public SubStat SubStat3 { get; }
-    public SubStat SubStat4 { get; }
-    public int Level { get; }
 
     public Relic()
     {
@@ -40,7 +32,16 @@ public class Relic
         this.Level = 0;
         this.Identifier = this.ConstructIdentifier();
     }
-    
+
+    public RelicType RelicType { get; set; }
+    public RelicSet RelicSet { get; set; }
+    public MainStat MainStat { get; }
+    public SubStat SubStat1 { get; }
+    public SubStat SubStat2 { get; }
+    public SubStat SubStat3 { get; }
+    public SubStat SubStat4 { get; }
+    public int Level { get; }
+
     private string ConstructIdentifier()
     {
         string epochTime = DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString();

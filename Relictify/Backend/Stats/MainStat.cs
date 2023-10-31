@@ -1,10 +1,9 @@
-﻿namespace Relictify.Backend.Stats
+﻿namespace Relictify.Backend.Stats;
+
+public class MainStat : Stat
 {
-    public class MainStat : Stat
+    public void ReloadMainStat()
     {
-        public void ReloadMainStat()
-        {
-            //TODO: implement main stat mapping here
-        }
+        //TODO: implement main stat mapping here
     }
 }

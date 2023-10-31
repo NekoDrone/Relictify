@@ -1,12 +1,11 @@
 using Relictify.Backend.Characters;
-using Relictify.Backend.Relics;
 
 namespace Relictify.Backend.API;
 
 public class ApiClient : IApiClient
 {
     private const string BaseUrl = "https://relictify.com/api/v1/";
-    private static readonly HttpClient Client = new ();
+    private static readonly HttpClient Client = new();
 
     public ApiClient()
     {

@@ -21,8 +21,8 @@ public static class RelicBuilderDirector
     {
         Builder.Start();
         Builder.SetRelicType(relicType);
-        if(relicType == RelicType.Head) Builder.SetMainStat(StatType.HpFlat);
-        if(relicType == RelicType.Hands) Builder.SetMainStat(StatType.AtkFlat);
+        if (relicType == RelicType.Head) Builder.SetMainStat(StatType.HpFlat);
+        if (relicType == RelicType.Hands) Builder.SetMainStat(StatType.AtkFlat);
         return Builder.Build();
     }
 }

@@ -1,36 +1,33 @@
-﻿
-namespace Relictify.Backend.Relics
+﻿namespace Relictify.Backend.Relics;
+
+public enum RelicSet
 {
-	public enum RelicSet
-	{
-		None,
+    None,
 
-		CavernBandOfSizzlingThunder,
-		CavernChampionOfStreetwiseBoxing,
-		CavernEagleOfTwilightLine,
-		CavernFiresmithOfLavaForging,
-		CavernGeniusOfBrilliantStars,
-		CavernGuardOfWutheringSnow,
-		CavernHunterOfGlacialForest,
-		CavernKnightOfPurityPalace,
-		CavernMusketeerOfWildWheat,
-		CavernPasserbyOfWanderingCloud,
-		CavernThiefOfShootingMeteor,
-		CavernWastelanderOfBanditryDesert,
+    CavernBandOfSizzlingThunder,
+    CavernChampionOfStreetwiseBoxing,
+    CavernEagleOfTwilightLine,
+    CavernFiresmithOfLavaForging,
+    CavernGeniusOfBrilliantStars,
+    CavernGuardOfWutheringSnow,
+    CavernHunterOfGlacialForest,
+    CavernKnightOfPurityPalace,
+    CavernMusketeerOfWildWheat,
+    CavernPasserbyOfWanderingCloud,
+    CavernThiefOfShootingMeteor,
+    CavernWastelanderOfBanditryDesert,
 
-		PlanarBelobogOfTheArchitects,
-		PlanarCelestialDifferentiator,
-		PlanarFleetOfTheAgeless,
-		PlanarInertSalsotto,
-		PlanarPanGalacticCommercialEnterprise,
-		PlanarSpaceSealingStation,
-		PlanarSprightlyVonwacq,
-		PlanarTaliaKingdomOfBanditry,
+    PlanarBelobogOfTheArchitects,
+    PlanarCelestialDifferentiator,
+    PlanarFleetOfTheAgeless,
+    PlanarInertSalsotto,
+    PlanarPanGalacticCommercialEnterprise,
+    PlanarSpaceSealingStation,
+    PlanarSprightlyVonwacq,
+    PlanarTaliaKingdomOfBanditry,
 
-		CavernLongevousDisciple,
-		CavernMessengerTraversingHackerspace,
-		PlanarRutilantArena,
-		PlanarBrokenKeel
-	}
+    CavernLongevousDisciple,
+    CavernMessengerTraversingHackerspace,
+    PlanarRutilantArena,
+    PlanarBrokenKeel
 }
-

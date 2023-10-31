@@ -1,10 +1,9 @@
-﻿namespace Relictify.Backend.Stats
+﻿namespace Relictify.Backend.Stats;
+
+public enum BaseStat
 {
-    public enum BaseStat
-    {
-        Hp,
-        Atk,
-        Def,
-        Spd
-    }
+    Hp,
+    Atk,
+    Def,
+    Spd
 }

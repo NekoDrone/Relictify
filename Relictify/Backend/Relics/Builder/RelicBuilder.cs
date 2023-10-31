@@ -10,7 +10,7 @@ public class RelicBuilder : IRelicBuilder
     {
         this.Start();
     }
-    
+
     public void Start()
     {
         this._relic = new Relic();
@@ -18,7 +18,7 @@ public class RelicBuilder : IRelicBuilder
 
     public void SetRelicType(RelicType relicType)
     {
-        if(this._relic is null)
+        if (this._relic is null)
             throw new InvalidOperationException(
                 "Builder reference invalid. Call Reset() before calling this method");
         this._relic.RelicType = relicType;
@@ -26,7 +26,7 @@ public class RelicBuilder : IRelicBuilder
 
     public void SetMainStat(StatType statType)
     {
-        if(this._relic is null)
+        if (this._relic is null)
             throw new InvalidOperationException(
                 "Builder reference invalid. Call Reset() before calling this method");
         this._relic.SetMainStat(statType);
@@ -34,7 +34,7 @@ public class RelicBuilder : IRelicBuilder
 
     public Relic Build()
     {
-        if(this._relic is null)
+        if (this._relic is null)
             throw new InvalidOperationException(
                 "Builder reference invalid. Call Reset() before calling this method");
         return this._relic;

@@ -5,8 +5,8 @@ namespace Relictify.Backend.WebStorage;
 
 public class EntryStore : IEntryStore
 {
-    private readonly IWebStorage _webStore;
     private const string EntryStartingIdentifier = "Entry: ";
+    private readonly IWebStorage _webStore;
 
     public EntryStore(IWebStorage webStore)
     {
@@ -17,7 +17,7 @@ public class EntryStore : IEntryStore
     {
         string jsonString = JsonSerializer.Serialize(entry);
         string identifier = EntryStartingIdentifier + entry.Character.Name;
-        this._webStore.SetItem(identifier,jsonString);
+        this._webStore.SetItem(identifier, jsonString);
     }
 
     public CharacterEntry GetEntry(string identifier)

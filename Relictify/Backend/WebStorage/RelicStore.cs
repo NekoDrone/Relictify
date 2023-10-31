@@ -5,8 +5,8 @@ namespace Relictify.Backend.WebStorage;
 
 public class RelicStore : IRelicStore
 {
-    private readonly IWebStorage _webStore;
     private const string RelicStartingIdentifier = "Relic: ";
+    private readonly IWebStorage _webStore;
 
     public RelicStore(IWebStorage webStore)
     {
@@ -17,7 +17,7 @@ public class RelicStore : IRelicStore
     {
         string jsonString = JsonSerializer.Serialize(relic);
         string identifier = RelicStartingIdentifier + relic.Identifier;
-        this._webStore.SetItem(identifier,jsonString);
+        this._webStore.SetItem(identifier, jsonString);
     }
 
     public Relic GetRelic(string identifier)
@@ -35,12 +35,12 @@ public class RelicStore : IRelicStore
         foreach (string key in storageRef.Keys)
         {
             if (!key.StartsWith(RelicStartingIdentifier)) continue;
-            
+
             string jsonString = storageRef[key];
             Relic? listItem = JsonSerializer.Deserialize<Relic>(jsonString);
             if (listItem == null)
                 throw new InvalidOperationException("Relic json conversion failed while loading all relics");
-            
+
             relicList.Add(listItem);
         }
         // You might be tempted to convert the above to a LINQ expression,

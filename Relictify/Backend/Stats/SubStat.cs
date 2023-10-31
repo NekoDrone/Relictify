@@ -1,10 +1,9 @@
-﻿namespace Relictify.Backend.Stats
+﻿namespace Relictify.Backend.Stats;
+
+public class SubStat : Stat
 {
-    public class SubStat : Stat
+    public void ReloadSubStat()
     {
-        public void ReloadSubStat()
-        {
-            //TODO: implement substat reloading here
-        }
+        //TODO: implement substat reloading here
     }
 }

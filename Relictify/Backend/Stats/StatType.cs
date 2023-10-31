@@ -1,23 +1,22 @@
-﻿namespace Relictify.Backend.Stats
+﻿namespace Relictify.Backend.Stats;
+
+public enum StatType
 {
-    public enum StatType
-    {
-        HpFlat,
-        HpPercent,
-        AtkFlat,
-        AtkPercent,
-        DefFlat,
-        DefPercent,
-        SpdFlat,
-        SpdPercent,
-        CritRate,
-        CritDmg,
-        EHR,
-        EffectRes,
-        BreakEffect,
-        OutgoingHealing,
-        ERR,
-        ElementalDamage,
-        None
-    }
+    HpFlat,
+    HpPercent,
+    AtkFlat,
+    AtkPercent,
+    DefFlat,
+    DefPercent,
+    SpdFlat,
+    SpdPercent,
+    CritRate,
+    CritDmg,
+    EHR,
+    EffectRes,
+    BreakEffect,
+    OutgoingHealing,
+    ERR,
+    ElementalDamage,
+    None
 }
