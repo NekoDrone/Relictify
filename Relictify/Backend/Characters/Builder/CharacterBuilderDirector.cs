@@ -1,17 +1,17 @@
 ﻿namespace Relictify.Backend.Characters.Builder;
 
-public class CharacterBuilderDirector
+public static class CharacterBuilderDirector
 {
-    private readonly ICharacterBuilder _builder;
+    private static readonly ICharacterBuilder Builder;
 
-    public CharacterBuilderDirector(ICharacterBuilder builder)
+    static CharacterBuilderDirector()
     {
-        this._builder = builder;
+        Builder = new CharacterBuilder();
     }
 
-    public Character EmptyCharacter()
+    public static Character NewEmptyCharacter()
     {
-        this._builder.Start();
-        return this._builder.Build();
+        Builder.Start();
+        return Builder.Build();
     }
 }

@@ -5,33 +5,17 @@ namespace Relictify.Backend.Relics
 {
     public class EquippedRelics
     {
-        public RelicSet CavernSet2Pc1 { get; private set; }
-        public RelicSet CavernSet2Pc2 { get; private set; }
-        public RelicSet CavernSet4Pc { get; private set; }
-        public RelicSet PlanarSet { get; private set; }
-        public Relic HeadRelic { get; private set; }
-        public Relic HandsRelic { get; private set; }
-        public Relic BodyRelic { get; private set; }
-        public Relic FeetRelic { get; private set; }
-        public Relic SphereRelic { get; private set; }
-        public Relic RopeRelic { get; private set; }
-        public List<MiscStat> MiscStats { get; private set; }
-
-        public EquippedRelics()
-        {
-            this.CavernSet2Pc1 = RelicSet.None;
-            this.CavernSet2Pc2 = RelicSet.None;
-            this.CavernSet4Pc = RelicSet.None;
-            this.PlanarSet = RelicSet.None;
-
-            this.HeadRelic = RelicBuilderDirector.BuildHeadRelic();
-            this.HandsRelic = RelicBuilderDirector.BuildHandsRelic();
-            this.BodyRelic = RelicBuilderDirector.BuildBodyRelic(StatType.None);
-            this.FeetRelic = RelicBuilderDirector.BuildFeetRelic(StatType.None);
-            this.SphereRelic = RelicBuilderDirector.BuildSphereRelic(StatType.None);
-            this.RopeRelic = RelicBuilderDirector.BuildRopeRelic(StatType.None);
-            this.MiscStats = new List<MiscStat>();
-        }
+        public RelicSet CavernSet2Pc1 { get; private set; } = RelicSet.None;
+        public RelicSet CavernSet2Pc2 { get; private set; } = RelicSet.None;
+        public RelicSet CavernSet4Pc { get; private set; } = RelicSet.None;
+        public RelicSet PlanarSet { get; private set; } = RelicSet.None;
+        public Relic HeadRelic { get; private set; } = RelicBuilderDirector.NewBlankRelic(RelicType.Head);
+        public Relic HandsRelic { get; private set; } = RelicBuilderDirector.NewBlankRelic(RelicType.Hands);
+        public Relic BodyRelic { get; private set; } = RelicBuilderDirector.NewBlankRelic(RelicType.Body);
+        public Relic FeetRelic { get; private set; } = RelicBuilderDirector.NewBlankRelic(RelicType.Feet);
+        public Relic SphereRelic { get; private set; } = RelicBuilderDirector.NewBlankRelic(RelicType.Sphere);
+        public Relic RopeRelic { get; private set; } = RelicBuilderDirector.NewBlankRelic(RelicType.Rope);
+        public List<MiscStat> MiscStats { get; private set; } = new(); //TODO: Relic set to MiscStat mapping.
 
         public double GetStatSum(StatType statType)
         {
@@ -47,12 +31,32 @@ namespace Relictify.Backend.Relics
 
         public void EquipRelic(Relic relic)
         {
-            if (relic.RelicType == RelicType.Head) this.HeadRelic = relic;
-            if (relic.RelicType == RelicType.Hands) this.HandsRelic = relic;
-            if (relic.RelicType == RelicType.Feet) this.FeetRelic = relic;
-            if (relic.RelicType == RelicType.Body) this.BodyRelic = relic;
-            if (relic.RelicType == RelicType.Rope) this.RopeRelic = relic;
-            if (relic.RelicType == RelicType.Sphere) this.SphereRelic = relic;
+            switch (relic.RelicType)
+            {
+                case RelicType.Head:
+                    this.HeadRelic = relic;
+                    break;
+                case RelicType.Hands:
+                    this.HandsRelic = relic;
+                    break;
+                case RelicType.Feet:
+                    this.FeetRelic = relic;
+                    break;
+                case RelicType.Body:
+                    this.BodyRelic = relic;
+                    break;
+                case RelicType.Rope:
+                    this.RopeRelic = relic;
+                    break;
+                case RelicType.Sphere:
+                    this.SphereRelic = relic;
+                    break;
+                case RelicType.Blank:
+                    throw new ArgumentException("Not allowed to equip relic of type 'Blank'", nameof(relic));
+                    break;
+                default:
+                    throw new ArgumentException("Provided relic did not have valid relic type.", nameof(relic));
+            }
         }
     }
 
