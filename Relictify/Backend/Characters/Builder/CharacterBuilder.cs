@@ -13,7 +13,7 @@ public class CharacterBuilder : ICharacterBuilder
 
     public void Start()
     {
-        this._character = new Character(0, "Empty.", CombatElement.None, CharPath.None);
+        this._character = new Character(0, "Empty", CombatElement.None, CharPath.None);
     }
 
     public void SetRarity(int rarity)
