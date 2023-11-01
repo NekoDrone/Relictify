@@ -4,6 +4,6 @@ namespace Relictify.Backend.API;
 
 public interface IApiClient
 {
-    public Dictionary<string, Character> GetCharacterManifest();
-    public Dictionary<int, string> GetRelicManifest();
+    public Task<CharacterManifest> GetCharacterManifestAsync();
+    public Task<RelicManifest> GetRelicManifestAsync();
 }

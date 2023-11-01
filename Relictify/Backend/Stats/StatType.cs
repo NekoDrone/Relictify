@@ -2,6 +2,7 @@
 
 public enum StatType
 {
+    None,
     HpFlat,
     HpPercent,
     AtkFlat,
@@ -17,6 +18,5 @@ public enum StatType
     BreakEffect,
     OutgoingHealing,
     ERR,
-    ElementalDamage,
-    None
+    ElementalDamage
 }

@@ -1,4 +1,4 @@
-using Relictify.Backend.Characters;
+using System.Text.Json;
 
 namespace Relictify.Backend.API;
 
@@ -12,18 +12,25 @@ public class ApiClient : IApiClient
         Client.BaseAddress = new Uri(BaseUrl);
     }
 
-    public Dictionary<string, Character> GetCharacterManifest()
+    public async Task<CharacterManifest> GetCharacterManifestAsync()
     {
-        throw new NotImplementedException();
+        string jsonString = await GetExternalResource("characters");
+        CharacterManifest? manifest = JsonSerializer.Deserialize<CharacterManifest>(jsonString);
+        return manifest ?? throw new InvalidOperationException(
+            $"JSON deserialization of API manifest data was invalid. Check the API: {BaseUrl}/characters");
+
     }
 
-    public Dictionary<int, string> GetRelicManifest()
+    public async Task<RelicManifest> GetRelicManifestAsync()
     {
-        throw new NotImplementedException();
+        string jsonString = await GetExternalResource("relics");
+        RelicManifest? manifest = JsonSerializer.Deserialize<RelicManifest>(jsonString);
+        return manifest ?? throw new InvalidOperationException(
+            $"JSON deserialization of API manifest data was invalid. Check the API: {BaseUrl}/relics");
     }
 
-    private Task<TValue> GetExternalResource<TValue>()
+    private static async Task<string> GetExternalResource(string resource)
     {
-        throw new NotImplementedException();
+        return await Client.GetStringAsync(resource);
     }
 }

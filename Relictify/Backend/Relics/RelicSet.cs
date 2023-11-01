@@ -21,7 +21,7 @@ public enum RelicSet
     PlanarCelestialDifferentiator,
     PlanarFleetOfTheAgeless,
     PlanarInertSalsotto,
-    PlanarPanGalacticCommercialEnterprise,
+    PlanarPanCosmicCommercialEnterprise,
     PlanarSpaceSealingStation,
     PlanarSprightlyVonwacq,
     PlanarTaliaKingdomOfBanditry,

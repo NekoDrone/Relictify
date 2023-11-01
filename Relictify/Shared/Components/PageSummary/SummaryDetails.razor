@@ -1,7 +1,8 @@
 @using Relictify.Backend.Characters
+@using Relictify.Backend.Helpers
 <div class="summary-details">
     <img class="details-img" src="assets/images/char-paths/@(CharPath.ToString()).webp" alt="@CharPath.ToString()"/>
-    <p class="details-text">@CharPath.ToString() / @CharName</p>
+    <p class="details-text">@EnumToString.ConvertCharPath(CharPath) / @CharName</p>
 </div>
 
 @code {
