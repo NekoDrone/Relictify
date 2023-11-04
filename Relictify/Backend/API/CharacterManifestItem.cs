@@ -1,6 +1,16 @@
-﻿namespace Relictify.Backend.API;
+﻿using Relictify.Backend.Characters;
+using Relictify.Backend.Stats;
+
+namespace Relictify.Backend.API;
 
 public class CharacterManifestItem
 {
-    //should include name, path, and 
+    public string Name;
+    public int Rarity;
+    public CharPath Path;
+    public CombatElement Element;
+    public double StartingHp;
+    public double StartingAtk;
+    public double StartingDef;
+    public double StartingSpd;
 }
