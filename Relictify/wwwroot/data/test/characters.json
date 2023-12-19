@@ -1,0 +1,392 @@
+[
+  {
+    "Element": 1,
+    "Name": "Trailblazer - Destruction",
+    "Path": 1,
+    "Rarity": 5,
+    "StartingHp": 163,
+    "StartingAtk": 84,
+    "StartingDef": 62,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 2,
+    "Name": "March 7th",
+    "Path": 2,
+    "Rarity": 4,
+    "StartingHp": 144,
+    "StartingAtk": 69,
+    "StartingDef": 78,
+    "StartingSpd": 101
+  },
+  {
+    "Element": 3,
+    "Name": "Dan Heng",
+    "Path": 3,
+    "Rarity": 4,
+    "StartingHp": 120,
+    "StartingAtk": 74,
+    "StartingDef": 54,
+    "StartingSpd": 110
+  },
+  {
+    "Element": 4,
+    "Name": "Himeko",
+    "Path": 4,
+    "Rarity": 5,
+    "StartingHp": 142,
+    "StartingAtk": 102,
+    "StartingDef": 59,
+    "StartingSpd": 96
+  },
+  {
+    "Element": 4,
+    "Name": "Asta",
+    "Path": 5,
+    "Rarity": 4,
+    "StartingHp": 139,
+    "StartingAtk": 69,
+    "StartingDef": 63,
+    "StartingSpd": 106
+  },
+  {
+    "Element": 5,
+    "Name": "Arlan",
+    "Path": 1,
+    "Rarity": 4,
+    "StartingHp": 163,
+    "StartingAtk": 81,
+    "StartingDef": 45,
+    "StartingSpd": 102
+  },
+  {
+    "Element": 2,
+    "Name": "Herta",
+    "Path": 4,
+    "Rarity": 4,
+    "StartingHp": 129,
+    "StartingAtk": 79,
+    "StartingDef": 54,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 4,
+    "Name": "Hook",
+    "Path": 1,
+    "Rarity": 4,
+    "StartingHp": 163,
+    "StartingAtk": 81,
+    "StartingDef": 45,
+    "StartingSpd": 102
+  },
+  {
+    "Element": 1,
+    "Name": "Natasha",
+    "Path": 7,
+    "Rarity": 4,
+    "StartingHp": 158,
+    "StartingAtk": 64,
+    "StartingDef": 69,
+    "StartingSpd": 98
+  },
+  {
+    "Element": 2,
+    "Name": "Pela",
+    "Path": 6,
+    "Rarity": 4,
+    "StartingHp": 134,
+    "StartingAtk": 74,
+    "StartingDef": 64,
+    "StartingSpd": 105
+  },
+  {
+    "Element": 7,
+    "Name": "Qingque",
+    "Path": 4,
+    "Rarity": 4,
+    "StartingHp": 139,
+    "StartingAtk": 88,
+    "StartingDef": 60,
+    "StartingSpd": 98
+  },
+  {
+    "Element": 3,
+    "Name": "Sampo",
+    "Path": 6,
+    "Rarity": 4,
+    "StartingHp": 139,
+    "StartingAtk": 84,
+    "StartingDef": 54,
+    "StartingSpd": 102
+  },
+  {
+    "Element": 5,
+    "Name": "Serval",
+    "Path": 4,
+    "Rarity": 4,
+    "StartingHp": 124,
+    "StartingAtk": 88,
+    "StartingDef": 51,
+    "StartingSpd": 104
+  },
+  {
+    "Element": 1,
+    "Name": "Sushang",
+    "Path": 3,
+    "Rarity": 4,
+    "StartingHp": 124,
+    "StartingAtk": 76,
+    "StartingDef": 57,
+    "StartingSpd": 107
+  },
+  {
+    "Element": 5,
+    "Name": "Tingyun",
+    "Path": 5,
+    "Rarity": 4,
+    "StartingHp": 115,
+    "StartingAtk": 72,
+    "StartingDef": 54,
+    "StartingSpd": 112
+  },
+  {
+    "Element": 5,
+    "Name": "Bailu",
+    "Path": 7,
+    "Rarity": 5,
+    "StartingHp": 179,
+    "StartingAtk": 76,
+    "StartingDef": 66,
+    "StartingSpd": 98
+  },
+  {
+    "Element": 3,
+    "Name": "Bronya",
+    "Path": 5,
+    "Rarity": 5,
+    "StartingHp": 168,
+    "StartingAtk": 79,
+    "StartingDef": 72,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 1,
+    "Name": "Clara",
+    "Path": 1,
+    "Rarity": 5,
+    "StartingHp": 168,
+    "StartingAtk": 100,
+    "StartingDef": 66,
+    "StartingSpd": 90
+  },
+  {
+    "Element": 2,
+    "Name": "Gepard",
+    "Path": 2,
+    "Rarity": 5,
+    "StartingHp": 190,
+    "StartingAtk": 73,
+    "StartingDef": 89,
+    "StartingSpd": 92
+  },
+  {
+    "Element": 4,
+    "Name": "Trailblazer - Preservation",
+    "Path": 2,
+    "Rarity": 5,
+    "StartingHp": 163,
+    "StartingAtk": 84,
+    "StartingDef": 62,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 6,
+    "Name": "Welt",
+    "Path": 6,
+    "Rarity": 5,
+    "StartingHp": 153,
+    "StartingAtk": 84,
+    "StartingDef": 69,
+    "StartingSpd": 102
+  },
+  {
+    "Element": 2,
+    "Name": "Yanqing",
+    "Path": 3,
+    "Rarity": 5,
+    "StartingHp": 121,
+    "StartingAtk": 92,
+    "StartingDef": 56,
+    "StartingSpd": 109
+  },
+  {
+    "Element": 7,
+    "Name": "Seele",
+    "Path": 3,
+    "Rarity": 5,
+    "StartingHp": 126,
+    "StartingAtk": 87,
+    "StartingDef": 49,
+    "StartingSpd": 115
+  },
+  {
+    "Element": 5,
+    "Name": "Jing Yuan",
+    "Path": 4,
+    "Rarity": 5,
+    "StartingHp": 158,
+    "StartingAtk": 95,
+    "StartingDef": 66,
+    "StartingSpd": 99
+  },
+  {
+    "Element": 6,
+    "Name": "Yukong",
+    "Path": 5,
+    "Rarity": 4,
+    "StartingHp": 124,
+    "StartingAtk": 81,
+    "StartingDef": 51,
+    "StartingSpd": 107
+  },
+  {
+    "Element": 7,
+    "Name": "Silver Wolf",
+    "Path": 6,
+    "Rarity": 5,
+    "StartingHp": 142,
+    "StartingAtk": 87,
+    "StartingDef": 62,
+    "StartingSpd": 107
+  },
+  {
+    "Element": 6,
+    "Name": "Luocha",
+    "Path": 7,
+    "Rarity": 5,
+    "StartingHp": 174,
+    "StartingAtk": 102,
+    "StartingDef": 49,
+    "StartingSpd": 101
+  },
+  {
+    "Element": 1,
+    "Name": "Luka",
+    "Path": 6,
+    "Rarity": 4,
+    "StartingHp": 124,
+    "StartingAtk": 79,
+    "StartingDef": 66,
+    "StartingSpd": 103
+  },
+  {
+    "Element": 3,
+    "Name": "Blade",
+    "Path": 1,
+    "Rarity": 5,
+    "StartingHp": 184,
+    "StartingAtk": 73,
+    "StartingDef": 66,
+    "StartingSpd": 97
+  },
+  {
+    "Element": 5,
+    "Name": "Kafka",
+    "Path": 6,
+    "Rarity": 5,
+    "StartingHp": 147,
+    "StartingAtk": 92,
+    "StartingDef": 66,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 7,
+    "Name": "Lynx",
+    "Path": 7,
+    "Rarity": 4,
+    "StartingHp": 144,
+    "StartingAtk": 67,
+    "StartingDef": 75,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 6,
+    "Name": "Dan Heng • Imbibitor Lunae",
+    "Path": 1,
+    "Rarity": 5,
+    "StartingHp": 168,
+    "StartingAtk": 95,
+    "StartingDef": 19,
+    "StartingSpd": 102
+  },
+  {
+    "Element": 7,
+    "Name": "Fu Xuan",
+    "Path": 2,
+    "Rarity": 5,
+    "StartingHp": 200,
+    "StartingAtk": 63,
+    "StartingDef": 82,
+    "StartingSpd": 100
+  },
+  {
+    "Element": 4,
+    "Name": "Guinaifen",
+    "Path": 6,
+    "Rarity": 4,
+    "StartingHp": 120,
+    "StartingAtk": 79,
+    "StartingDef": 60,
+    "StartingSpd": 106
+  },
+  {
+    "Element": 2,
+    "Name": "Jingliu",
+    "Path": 1,
+    "Rarity": 5,
+    "StartingHp": 195,
+    "StartingAtk": 92,
+    "StartingDef": 66,
+    "StartingSpd": 96
+  },
+  {
+    "Element": 4,
+    "Name": "Topaz and Numby",
+    "Path": 3,
+    "Rarity": 5,
+    "StartingHp": 126,
+    "StartingAtk": 84,
+    "StartingDef": 56,
+    "StartingSpd": 110
+  },
+  {
+    "Element": 3,
+    "Name": "Huohuo",
+    "Path": 7,
+    "Rarity": 5,
+    "StartingHp": 184,
+    "StartingAtk": 81,
+    "StartingDef": 69,
+    "StartingSpd": 98
+  },
+  {
+    "Element": 1,
+    "Name": "Argenti",
+    "Path": 4,
+    "Rarity": 5,
+    "StartingHp": 142,
+    "StartingAtk": 100,
+    "StartingDef": 49,
+    "StartingSpd": 103
+  },
+  {
+    "Element": 1,
+    "Name": "Hanya",
+    "Path": 5,
+    "Rarity": 4,
+    "StartingHp": 124,
+    "StartingAtk": 76,
+    "StartingDef": 48,
+    "StartingSpd": 110
+  }
+]

@@ -23,4 +23,10 @@
     <Folder Include="wwwroot\assets\images\splash\" />
     <Folder Include="wwwroot\css\fonts\font\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\data\test\characters.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
