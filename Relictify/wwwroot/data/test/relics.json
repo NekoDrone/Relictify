@@ -1,0 +1,114 @@
+[
+  {
+    "RelicName": "Band of Sizzling Thunder",
+    "TypeId": 1
+  },
+  {
+    "RelicName": "Champion of Streetwise Boxing",
+    "TypeId": 2
+  },
+  {
+    "RelicName": "Eagle of Twilight Line",
+    "TypeId": 3
+  },
+  {
+    "RelicName": "Firesmith of Lava-Forging",
+    "TypeId": 4
+  },
+  {
+    "RelicName": "Genius of Brilliant Stars",
+    "TypeId": 5
+  },
+  {
+    "RelicName": "Guard of Wuthering Snow",
+    "TypeId": 6
+  },
+  {
+    "RelicName": "Hunter of Glacial Forest",
+    "TypeId": 7
+  },
+  {
+    "RelicName": "Knight of Purity Palace",
+    "TypeId": 8
+  },
+  {
+    "RelicName": "Musketeer of Wild Wheat",
+    "TypeId": 9
+  },
+  {
+    "RelicName": "Passerby of Wandering Cloud",
+    "TypeId": 10
+  },
+  {
+    "RelicName": "Thief of Shooting Meteor",
+    "TypeId": 11
+  },
+  {
+    "RelicName": "Wastelander of Banditry Desert",
+    "TypeId": 12
+  },
+  {
+    "RelicName": "Belobog of the Architects",
+    "TypeId": 13
+  },
+  {
+    "RelicName": "Celestial Differentiator",
+    "TypeId": 14
+  },
+  {
+    "RelicName": "Fleet of the Ageless",
+    "TypeId": 15
+  },
+  {
+    "RelicName": "Inert Salsotto",
+    "TypeId": 16
+  },
+  {
+    "RelicName": "Pan-Cosmic Commercial Enterprise",
+    "TypeId": 17
+  },
+  {
+    "RelicName": "Space Sealing Station",
+    "TypeId": 18
+  },
+  {
+    "RelicName": "Sprightly Vonwacq",
+    "TypeId": 19
+  },
+  {
+    "RelicName": "Talia: Kingdom of Banditry",
+    "TypeId": 20
+  },
+  {
+    "RelicName": "Longevous Disciple",
+    "TypeId": 21
+  },
+  {
+    "RelicName": "Messenger Traversing Hackerspace",
+    "TypeId": 22
+  },
+  {
+    "RelicName": "Rutilant Arena",
+    "TypeId": 23
+  },
+  {
+    "RelicName": "Broken Keel",
+    "TypeId": 24
+  },
+  {
+    "RelicName": "The Ashblazing Grand Duke",
+    "TypeId": 25
+  },
+  {
+    "RelicName": "Prisoner In Deep Confinement",
+    "TypeId": 26
+  },
+  {
+    "RelicName": "Firmament Frontline: Glamoth",
+    "TypeId": 27
+  },
+  {
+    "RelicName": "Penacony, Land of the Dreams",
+    "TypeId": 28
+  }
+]

@@ -5,7 +5,7 @@ namespace Relictify.Backend.API;
 
 public class ApiClient : IApiClient
 {
-    private static readonly string BaseUrl = GlobalConstants.Env == "dev" ? "https://localhost:8080" : "https://relictify.com/api/v1/";
+    private static readonly string BaseUrl = GlobalConstants.ApiUrl;
     private static readonly HttpClient Client = new();
 
     public ApiClient()

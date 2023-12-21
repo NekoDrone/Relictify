@@ -1,4 +1,6 @@
-﻿namespace Relictify.Backend.API;
+﻿using System.Text.Json;
+
+namespace Relictify.Backend.API;
 
 public class MockApiClient : IApiClient
 {
@@ -8,11 +10,17 @@ public class MockApiClient : IApiClient
     // since it's for development purposes.
     public async Task<CharacterManifest> GetCharacterManifestAsync()
     {
-        throw new NotImplementedException();
+        string jsonData = await File.ReadAllTextAsync("wwwroot/data/characters.json");
+        CharacterManifest? manifest = JsonSerializer.Deserialize<CharacterManifest>(jsonData);
+        return manifest ?? throw new InvalidOperationException(
+            "JSON deserialization of Mock API data failed. Did you load data into 'wwwroot/data/characters.json' ?");
     }
 
     public async Task<RelicManifest> GetRelicManifestAsync()
     {
-        throw new NotImplementedException();
+        string jsonData = await File.ReadAllTextAsync("wwwroot/data/relics.json");
+        RelicManifest? manifest = JsonSerializer.Deserialize<RelicManifest>(jsonData);
+        return manifest ?? throw new InvalidOperationException(
+            "JSON deserialization of Mock API data failed. Did you load data into 'wwwroot/data/relics.json' ?");
     }
 }
