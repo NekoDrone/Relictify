@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Relictify;
+using Relictify.Backend.API;
 using Relictify.Backend.WebStorage;
 using Relictify.StateManagement;
 
@@ -13,5 +14,6 @@ builder.Services.AddScoped<IStateService, StateService>();
 builder.Services.AddScoped<IWebStorage, WebStorage>();
 builder.Services.AddScoped<IRelicStore, RelicStore>();
 builder.Services.AddScoped<IEntryStore, EntryStore>();
+builder.Services.AddScoped<IApiClient, ApiClient>();
 
 await builder.Build().RunAsync();

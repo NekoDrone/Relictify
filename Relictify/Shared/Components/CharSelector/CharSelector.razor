@@ -1,14 +1,22 @@
 @using Relictify.Shared.Components.AddChar
 @using Relictify.Backend.Characters
+@using Relictify.Backend.WebStorage
+@using Relictify.StateManagement
+@inject IEntryStore CharEntries
 <div>
-    @foreach (CharacterEntry Char in Chars)
+    @foreach (CharacterEntry Char in _chars)
     {
-        <CharSelectorButton/>
+        <CharSelectorButton Character="Char.Character"/>
     }
     <AddCharButton/>
 </div>
 
 @code {
     private int TotalChars;
-    private CharacterEntry[] Chars;
+    private List<CharacterEntry> _chars = null!;
+
+    protected override void OnInitialized()
+    {
+        this._chars = CharEntries.GetAllEntriesList();
+    }
 }
