@@ -25,6 +25,7 @@ public class StateService : IStateService
     private void InitializeStateService()
     {
         // on very first load (aka a new user), initialize the app with empty entry.
+        // TODO: Only do this if there is no existing data in localstorage.
         Character destructionTb =
             new Character(5, "Trailblazer - Destruction", CombatElement.Physical, CharPath.Destruction);
         CharacterEntry firstEntry = new CharacterEntry(destructionTb);

@@ -7,7 +7,7 @@
 @inject IStateService AppState
 
 <div>
-    <PageSummary PageEntry="@_testEntry"/>
+    <PageSummary PageEntry="@_pageInfo.Entry"/>
     <div>
         <CharSelector/>
         <PageContentWrapper/>
@@ -20,6 +20,8 @@
     
     protected override void OnInitialized()
     {
+        _pageInfo.Entry = AppState.GetCurrentEntry();
+        _pageInfo.Page = AppState.GetCurrentPage();
         AppState.OnAppStateChange += HandleStateChange;
     }
     
