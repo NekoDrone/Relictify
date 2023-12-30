@@ -1,0 +1,14 @@
+﻿@using Relictify.Backend.API
+
+
+<img class="char-modal-item" src="@CharFromManifest.Name-splash.webp" alt="@CharFromManifest.Name"/>
+
+@code {
+    [Parameter]
+    public required CharacterManifestItem CharFromManifest { get; set; }
+    
+    // TODO: Add char to active
+    
+    // TODO: If character is already active, grey out the box (change the CSS class on the conditional).
+    
+}
