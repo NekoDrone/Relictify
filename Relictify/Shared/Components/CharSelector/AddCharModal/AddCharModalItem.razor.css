@@ -1,0 +1,36 @@
+.modal-item-5-star {
+    width: 100px;
+    height: 120px;
+    position: relative;
+    background: linear-gradient(#945E53, #B8996D);
+    clip-path: path('M 0 120 L 100 120 L 100 20 A 20 20 0 0 0 80 0 L 0 0');
+}
+
+.modal-item-4-star {
+    width: 100px;
+    height: 120px;
+    position: relative;
+    background: linear-gradient(#414068, #9663CB);
+    clip-path: path('M 0 120 L 100 120 L 100 20 A 20 20 0 0 0 80 0 L 0 0');
+}
+
+.item-char-image {
+    width: 100px;
+}
+
+.item-element-icon {
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.item-char-name {
+    font-family: DIN, sans-serif;
+    text-align: center;
+    position: relative;
+    top: -14.5px;
+    font-size: 14px;
+    background-color: #404040;
+    color: #ced4da;
+}

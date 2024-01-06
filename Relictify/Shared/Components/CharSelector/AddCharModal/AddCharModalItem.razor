@@ -1,7 +1,10 @@
 ﻿@using Relictify.Backend.API
 
-
-<img class="char-modal-item" src="@CharFromManifest.Name-splash.webp" alt="@CharFromManifest.Name"/>
+<div class="modal-item-@CharFromManifest.Rarity-star" onclick="">
+    <img class="item-char-image" src="@CharFromManifest.Name-splash.webp" alt="@CharFromManifest.Name"/>
+    <img class="item-element-icon" src="path-@(CharFromManifest.Path).webp" alt="@CharFromManifest.Path"/>
+    <p class="item-char-name">@CharFromManifest.Name</p>
+</div>
 
 @code {
     [Parameter]
