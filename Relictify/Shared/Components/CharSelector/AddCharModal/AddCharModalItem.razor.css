@@ -4,6 +4,7 @@
     position: relative;
     background: linear-gradient(#945E53, #B8996D);
     clip-path: path('M 0 120 L 100 120 L 100 20 A 20 20 0 0 0 80 0 L 0 0');
+    cursor: default;
 }
 
 .modal-item-4-star {
@@ -12,6 +13,7 @@
     position: relative;
     background: linear-gradient(#414068, #9663CB);
     clip-path: path('M 0 120 L 100 120 L 100 20 A 20 20 0 0 0 80 0 L 0 0');
+    cursor: default;
 }
 
 .item-char-image {
