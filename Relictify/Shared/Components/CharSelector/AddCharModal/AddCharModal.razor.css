@@ -1,8 +1,11 @@
-﻿.char-modal-container {
+﻿.modal-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
-    width: 350px;
+    width: fit-content;
     backdrop-filter: blur(6px);
-    outline: #ced4da;
+    outline: #ced4da solid 3px;
+    row-gap: 10px;
+    column-gap: 20px;
+    padding: 10px;
 }
