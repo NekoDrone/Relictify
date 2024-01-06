@@ -48,7 +48,7 @@ public class CharacterBuilder : ICharacterBuilder
         this._character.CharPath = path;
     }
 
-    public void SetStartingHp(int value)
+    public void SetStartingHp(double value)
     {
         if (this._character is null)
             throw new InvalidOperationException(
@@ -57,7 +57,7 @@ public class CharacterBuilder : ICharacterBuilder
         this._character.BaseHp = stat;
     }
 
-    public void SetStartingAtk(int value)
+    public void SetStartingAtk(double value)
     {
         if (this._character is null)
             throw new InvalidOperationException(
@@ -66,7 +66,7 @@ public class CharacterBuilder : ICharacterBuilder
         this._character.BaseHp = stat;
     }
 
-    public void SetStartingDef(int value)
+    public void SetStartingDef(double value)
     {
         if (this._character is null)
             throw new InvalidOperationException(
@@ -75,7 +75,7 @@ public class CharacterBuilder : ICharacterBuilder
         this._character.BaseHp = stat;
     }
 
-    public void SetStartingSpd(int value)
+    public void SetStartingSpd(double value)
     {
         if (this._character is null)
             throw new InvalidOperationException(
