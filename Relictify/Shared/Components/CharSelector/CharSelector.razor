@@ -4,15 +4,15 @@
 @using Relictify.StateManagement
 @inject IEntryStore CharEntries
 <div>
-    @foreach (CharacterEntry Char in _chars)
+    @foreach (CharacterEntry character in _chars)
     {
-        <CharSelectorButton Character="Char.Character"/>
+        <CharSelectorButton Character="character.Character"/>
     }
     <AddCharButton/>
 </div>
 
 @code {
-    private int TotalChars;
+    private int _totalChars;
     private List<CharacterEntry> _chars = null!;
 
     protected override void OnInitialized()
