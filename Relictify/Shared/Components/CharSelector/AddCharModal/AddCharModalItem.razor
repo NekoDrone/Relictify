@@ -6,15 +6,31 @@
 @inject IEntryStore EntryStore
 @inject IStateService AppState
 
-<div class="modal-item-@CharFromManifest.Rarity-star" @onclick="@AddNewChar">
-    <img class="item-char-image" src="@CharFromManifest.Name-splash.webp" alt="@CharFromManifest.Name"/>
-    <img class="item-element-icon" src="path-@(CharFromManifest.Path).webp" alt="@CharFromManifest.Path"/>
-    <p class="item-char-name">@CharFromManifest.Name</p>
-</div>
+
+@if (_hasBeenAdded)
+{
+    <div class="modal-item-inactive" title="Character has been added">
+        <img class="item-char-image" src="@CharFromManifest.Name-splash.webp" alt="@CharFromManifest.Name"/>
+        <img class="item-element-icon" src="path-@(CharFromManifest.Path).webp" alt="@CharFromManifest.Path"/>
+        <p class="item-char-name">@CharFromManifest.Name</p>
+    </div>
+}
+
+else
+{
+    <div class="modal-item-@CharFromManifest.Rarity-star" @onclick="@AddNewChar" title="@CharFromManifest.Name">
+        <img class="item-char-image" src="@CharFromManifest.Name-splash.webp" alt="@CharFromManifest.Name"/>
+        <img class="item-element-icon" src="path-@(CharFromManifest.Path).webp" alt="@CharFromManifest.Path"/>
+        <p class="item-char-name">@CharFromManifest.Name</p>
+    </div>
+}
+
 
 @code {
     [Parameter]
     public required CharacterManifestItem CharFromManifest { get; set; }
+
+    private bool _hasBeenAdded;
     
     private void AddNewChar()
     {
@@ -23,7 +39,11 @@
         EntryStore.SaveEntry(newEntry);
         AppState.ChangeEntry(newEntry);
     }
-    
-    // TODO: If character is already active, grey out the box (change the CSS class on the conditional).
+
+    protected override void OnInitialized()
+    {
+        string entryIdentifier = $"Entry: {CharFromManifest.Name}";
+        this._hasBeenAdded = EntryStore.ContainsEntry(entryIdentifier);
+    }
     
 }

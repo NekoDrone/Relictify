@@ -20,4 +20,6 @@ public interface IWebStorage
 
     // this is just another interop call to write the dictionary to the blob.
     public void WriteToStorage();
+
+    public bool ContainsItem(string keyName);
 }

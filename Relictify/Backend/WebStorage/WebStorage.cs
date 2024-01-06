@@ -47,6 +47,11 @@ public class WebStorage : IWebStorage
         this.InteropSetItem(DictIdentifier, jsonString);
     }
 
+    public bool ContainsItem(string keyName)
+    {
+        return this._storageDict.ContainsKey(keyName);
+    }
+
     private void InitializeStorage()
     {
         if (this.InteropGetValue(DictIdentifier) is not null) return;

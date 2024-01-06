@@ -45,4 +45,9 @@ public class EntryStore : IEntryStore
 
         return relicList;
     }
+
+    public bool ContainsEntry(string identifier)
+    {
+        return this._webStore.ContainsItem(identifier);
+    }
 }

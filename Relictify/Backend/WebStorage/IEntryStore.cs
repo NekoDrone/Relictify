@@ -7,4 +7,5 @@ public interface IEntryStore
     public void SaveEntry(CharacterEntry entry);
     public CharacterEntry GetEntry(string identifier);
     public List<CharacterEntry> GetAllEntriesList();
+    public bool ContainsEntry(string identifier);
 }
