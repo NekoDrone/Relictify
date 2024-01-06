@@ -28,4 +28,4 @@ For bug reports and other issues or feature requests, please file an issue under
 
 ## Contributing
 
-The project is open to contributions. To get started, please see CONTRIBUTING.md
+The project is open to contributions. To get started, please see [CONTRIBUTING.md](https://github.com/NekoDrone/Relictify/blob/master/CONTRIBUTING.md)
